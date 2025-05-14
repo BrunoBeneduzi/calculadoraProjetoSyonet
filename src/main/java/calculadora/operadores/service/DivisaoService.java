@@ -59,8 +59,6 @@ public class DivisaoService {
 			
 		}while(divisaoFinalizada);
 		
-		
-			
 			return listaDeNumeros;
 	}
 }

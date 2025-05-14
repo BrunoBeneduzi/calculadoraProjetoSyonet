@@ -14,8 +14,8 @@ public class CalculadoraMenu {
 		int escolha = 0;
 		do {
 			System.out.print("Digite qual operação deseja fazer"+"\n1 - Soma"+"\n2 - Subtração"+"\n3 - Divisão"+"\n4 - Multiplicação"+"\n5 - Finalizar programa"+ "\n-> ");
-			
 			escolha = sc.nextInt();
+			
 			System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
 			switch(escolha) {
 				case 1:

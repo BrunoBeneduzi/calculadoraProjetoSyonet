@@ -25,7 +25,7 @@ public class SomaService {
 	
 	private List<BigDecimal> adicionaNumerosNaLista() {
 		BigDecimal numeroBigDecimal = BigDecimal.ZERO;
-		System.out.println("Digite os numeros e aperte enter para fazer a soma, quando quiser parar de digitar e fazer a subtracao de todos os numeros, digite (P)");
+		System.out.println("Digite os numeros e aperte enter para fazer a soma, quando quiser parar de digitar e fazer a ssoma de todos os numeros, digite (P)");
 		
 		do{
 			System.out.print("-> ");
