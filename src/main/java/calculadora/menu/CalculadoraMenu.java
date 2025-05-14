@@ -1,6 +1,7 @@
 package calculadora.menu;
 
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import calculadora.operadores.service.OperacoesService;
@@ -14,7 +15,14 @@ public class CalculadoraMenu {
 		int escolha = 0;
 		do {
 			System.out.print("Digite qual operação deseja fazer"+"\n1 - Soma"+"\n2 - Subtração"+"\n3 - Divisão"+"\n4 - Multiplicação"+"\n5 - Finalizar programa"+ "\n-> ");
-			escolha = sc.nextInt();
+			
+			try {
+				escolha = sc.nextInt();
+				sc.nextLine();
+			}catch(InputMismatchException e) {
+				sc.nextLine();
+			}
+			
 			
 			System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
 			switch(escolha) {

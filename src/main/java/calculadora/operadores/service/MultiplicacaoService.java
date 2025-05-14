@@ -9,7 +9,7 @@ public class MultiplicacaoService {
 	private Scanner sc = new Scanner(System.in);
 	private List<BigDecimal> listaDeNumeros = new ArrayList<>();
 	private BigDecimal resultado = BigDecimal.ZERO;
-	private Boolean multiplicacaoFinalizada = false;
+	private Boolean multiplicacaoFinalizada = true;
 	
 	protected void multiplica() {
 		this.adicionaNumerosNaLista();
@@ -24,7 +24,7 @@ public class MultiplicacaoService {
 			this.resultado = this.resultado.multiply(multiplicaTodos);
 		}
 		
-		System.out.println("A multiplicação de todos os numeros foi de -> "+ this.resultado);
+		System.out.println("A multiplicação foi de -> "+ this.resultado);
 		listaDeNumeros.clear();
 		this.resultado = BigDecimal.ZERO;
 	}
@@ -40,17 +40,15 @@ public class MultiplicacaoService {
 			if(numeroString.equalsIgnoreCase("p")) {
 				multiplicacaoFinalizada = false;
 			}else {
-				multiplicacaoFinalizada = true;
-				
-				numeroBigDecimal = new BigDecimal(numeroString.replace(",", "."));//caso o usuario digite uma virgula, ela vai ser substituida por um PONTO, para não lançar uma exceção
-				
-				listaDeNumeros.add(numeroBigDecimal);
+				try {
+					numeroBigDecimal = new BigDecimal(numeroString.replace(",", "."));//caso o usuario digite uma virgula, ela vai ser substituida por um PONTO, para não lançar uma exceção
+					listaDeNumeros.add(numeroBigDecimal);
+				}catch(NumberFormatException e) {
+					System.out.println("Digite um numero valido");
+				}	
 			}
 			
 		}while(multiplicacaoFinalizada);
-		
-		
-			
 			return listaDeNumeros;
 	}
 }

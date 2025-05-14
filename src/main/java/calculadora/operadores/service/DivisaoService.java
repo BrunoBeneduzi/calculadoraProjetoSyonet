@@ -10,7 +10,7 @@ public class DivisaoService {
 	private Scanner sc = new Scanner(System.in);
 	private List<BigDecimal> listaDeNumeros = new ArrayList<>();
 	private BigDecimal resultado = BigDecimal.ZERO;
-	private Boolean divisaoFinalizada = false;
+	private Boolean divisaoFinalizada = true;
 	
 	protected void divide() {
 		Boolean permitido = true;
@@ -50,11 +50,14 @@ public class DivisaoService {
 			if(numeroString.equalsIgnoreCase("p")) {
 				divisaoFinalizada = false;
 			}else {
-				divisaoFinalizada = true;
+				try {
+					numeroBigDecimal = new BigDecimal(numeroString.replace(",", "."));//caso o usuario digite uma virgula, ela vai ser substituida por um PONTO, para não lançar uma exceção
+					listaDeNumeros.add(numeroBigDecimal);
+					divisaoFinalizada = true;
+				}catch(NumberFormatException e) {
+					System.out.println("Digite um numero valido");
+				}
 				
-				numeroBigDecimal = new BigDecimal(numeroString.replace(",", "."));//caso o usuario digite uma virgula, ela vai ser substituida por um PONTO, para não lançar uma exceção
-				
-				listaDeNumeros.add(numeroBigDecimal);
 			}
 			
 		}while(divisaoFinalizada);

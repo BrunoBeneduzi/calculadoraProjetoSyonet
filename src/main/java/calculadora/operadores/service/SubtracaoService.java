@@ -9,7 +9,7 @@ public class SubtracaoService {
 	private Scanner sc = new Scanner(System.in);
 	private List<BigDecimal> listaDeNumeros = new ArrayList<>();
 	private BigDecimal resultado = BigDecimal.ZERO;
-	private Boolean subtracaoFinalizada = false;
+	private Boolean subtracaoFinalizada = true;
 
 	
 	protected void subtrair() {
@@ -40,11 +40,14 @@ public class SubtracaoService {
 			if(numeroString.equalsIgnoreCase("p")) {
 				subtracaoFinalizada = false;
 			}else {
-				subtracaoFinalizada = true;
 				
-				numeroBigDecimal = new BigDecimal(numeroString.replace(",", "."));//caso o usuario digite uma virgula, ela vai ser substituida por um PONTO, para não lançar uma exceção
+				try {
+					numeroBigDecimal = new BigDecimal(numeroString.replace(",", "."));//caso o usuario digite uma virgula, ela vai ser substituida por um PONTO, para não lançar uma exceção
+					listaDeNumeros.add(numeroBigDecimal);
+				}catch(NumberFormatException e) {
+					System.out.println("Digite um numero valido");
+				}
 				
-				listaDeNumeros.add(numeroBigDecimal);
 			}
 			
 		}while(subtracaoFinalizada);
