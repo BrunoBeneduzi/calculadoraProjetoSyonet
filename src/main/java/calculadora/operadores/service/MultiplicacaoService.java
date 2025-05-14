@@ -8,10 +8,11 @@ import java.util.Scanner;
 public class MultiplicacaoService {
 	private Scanner sc = new Scanner(System.in);
 	private List<BigDecimal> listaDeNumeros = new ArrayList<>();
-	private BigDecimal resultado = BigDecimal.ZERO;
-	private Boolean multiplicacaoFinalizada = true;
+	
+	
 	
 	protected void multiplica() {
+		BigDecimal resultado = BigDecimal.ZERO;
 		this.adicionaNumerosNaLista();
 		
 		BigDecimal recebePrimeiroNumero = listaDeNumeros.get(0);//faz a entrega do primeiro numero, para assim a multiplicação não ser 0
@@ -21,15 +22,16 @@ public class MultiplicacaoService {
 		this.listaDeNumeros.remove(0);
 		
 		for(BigDecimal multiplicaTodos: listaDeNumeros) {
-			this.resultado = this.resultado.multiply(multiplicaTodos);
+			resultado = resultado.multiply(multiplicaTodos);
 		}
 		
-		System.out.println("A multiplicação foi de -> "+ this.resultado);
+		System.out.println("A multiplicação foi de -> "+ resultado);
 		listaDeNumeros.clear();
-		this.resultado = BigDecimal.ZERO;
+		resultado = BigDecimal.ZERO;
 	}
 	
 	private List<BigDecimal> adicionaNumerosNaLista() {
+		Boolean multiplicacaoFinalizada = true;
 		BigDecimal numeroBigDecimal = BigDecimal.ZERO;
 		System.out.println("Digite os numeros e aperte enter para fazer a multiplicação, quando quiser parar de digitar e fazer a multiplicação de todos os numeros, digite (P)");
 		

@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class SubtracaoService {
 	private Scanner sc = new Scanner(System.in);
 	private List<BigDecimal> listaDeNumeros = new ArrayList<>();
-	private BigDecimal resultado = BigDecimal.ZERO;
-	private Boolean subtracaoFinalizada = true;
+	
 
 	
 	protected void subtrair() {
+		BigDecimal resultado = BigDecimal.ZERO;
 		BigDecimal recebePrimeiroNumero=  this.adicionaNumerosNaLista().get(0);//faz a entrega do primeiro numero, para assim a soma ser positiva
 		
 		resultado = recebePrimeiroNumero;
@@ -21,15 +21,16 @@ public class SubtracaoService {
 		
 		for(BigDecimal subtraiTodos: listaDeNumeros) {
 			
-			this.resultado = this.resultado.subtract(subtraiTodos);
+			resultado = resultado.subtract(subtraiTodos);
 		}
 		
-		System.out.println("A subtração de todos os numeros foi de -> "+ this.resultado);
+		System.out.println("A subtração de todos os numeros foi de -> "+resultado);
 		listaDeNumeros.clear();
-		this.resultado = BigDecimal.ZERO;
+		
 	}
 	
 	private List<BigDecimal> adicionaNumerosNaLista() {
+		Boolean subtracaoFinalizada = true;
 		BigDecimal numeroBigDecimal = BigDecimal.ZERO;
 		System.out.println("Digite os numeros e aperte enter para fazer a subtração, quando quiser parar de digitar e fazer a subtração de todos os numeros, digite (P)");
 		

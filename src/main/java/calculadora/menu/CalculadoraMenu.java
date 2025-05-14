@@ -22,8 +22,7 @@ public class CalculadoraMenu {
 			}catch(InputMismatchException e) {
 				sc.nextLine();
 			}
-			
-			
+
 			System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
 			switch(escolha) {
 				case 1:
