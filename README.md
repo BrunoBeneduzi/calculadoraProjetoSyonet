@@ -11,8 +11,6 @@ O sistema realiza as seguintes operações com dois números reais:
 - ✖️ **Multiplicação**
 - ➗ **Divisão**
 
-# Como Clonar um Repositório Git
-
 # 📥 Como Clonar um Repositório Git
 
 ## 🔓 Clonar um Repositório Público
