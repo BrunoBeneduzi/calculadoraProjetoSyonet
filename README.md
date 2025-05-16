@@ -25,6 +25,12 @@ Repositórios públicos estão disponíveis para qualquer pessoa acessar. Para c
    cd caminho/para/pasta
    ```
    🧩 Rode o comando para clonar: git clone https://github.com/BrunoBeneduzi/calculadoraProjetoSyonet.git
+
+## 🔧 Como Rodar o Projeto
+
+1. 💻 **IDE recomendada**: Qualquer IDE que suporte Java. Eu recomendo o **Eclipse** para facilitar o processo, pois foi utilizado neste projeto.
+
+   1.1. [Como baixar o Eclipse?](https://www.youtube.com/watch?v=KWGIaWh71q4)
    
 
 
